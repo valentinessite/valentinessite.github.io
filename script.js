@@ -1,6 +1,8 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function() {
   // Fetch quotes from the JSON file
+  const quoteElement = document.getElementById('quote');
+  quoteElement.textContent = `"yuhhhhhh"`;
   fetch('quotes.json')
     .then(response => response.json())
     .then(data => {
