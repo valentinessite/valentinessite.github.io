@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const today = new Date().getDate();
       const quoteElement = document.getElementById('quote');
       const authorElement = document.getElementById('author');
-      const imageElement = document.getElementById('jar');
+      const imageElement = document.getElementById('bottle');
 
       console.log(today/11);
       // Update the image source
