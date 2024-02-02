@@ -13,12 +13,21 @@ document.addEventListener("DOMContentLoaded", function() {
   fetch('quotes.json')
     .then(response => response.json())
     .then(data => {
-      // Get the current day (0-6, where 0 is Sunday)
-      const today = new Date().getDate();
 
-      // Display the quote of the day
+      const today = new Date().getDate();
       const quoteElement = document.getElementById('quote');
       const authorElement = document.getElementById('author');
+      const imageElement = document.getElementById('jar');
+
+      console.log(today/11);
+      // Update the image source
+      if( today/11 == 0 ) {
+        imageElement.src = 'jar1';
+      } else if(today/11 = 1 {
+        imageElement.src = 'jar2';
+      } else {
+        imageElement.src = 'jar3';
+      } 
 
       const quoteOfTheDay = data[today % data.length];
       quoteElement.textContent = `"${quoteOfTheDay.quote}"`;
