@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Update the image source
       if( today/11 == 0 ) {
         imageElement.src = 'jar1';
-      } else if(today/11 == 1 {
+      } else if( today/11 == 1 ) {
         imageElement.src = 'jar2';
       } else {
         imageElement.src = 'jar3';
