@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
       const quoteElement = document.getElementById('quote');
       const authorElement = document.getElementById('author');
       const imageElement = document.getElementById('bottle');
-
-      console.log(today/11);
+      const jarType = Math.floor(today/11);
+      console.log(jarType);
       // Update the image source
-      if( today/11 == 0 ) {
+      if( jarType == 0 ) {
         imageElement.src = 'jar1.jpg';
-      } else if( today/11 == 1 ) {
+      } else if( jarType == 1 ) {
         imageElement.src = 'jar2.jpg';
       } else {
         imageElement.src = 'jar3.jpg';
