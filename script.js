@@ -22,11 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(today/11);
       // Update the image source
       if( today/11 == 0 ) {
-        imageElement.src = 'jar1';
+        imageElement.src = 'jar1.jpg';
       } else if( today/11 == 1 ) {
-        imageElement.src = 'jar2';
+        imageElement.src = 'jar2.jpg';
       } else {
-        imageElement.src = 'jar3';
+        imageElement.src = 'jar3.jpg';
       } 
 
       const quoteOfTheDay = data[today % data.length];
