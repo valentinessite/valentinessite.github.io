@@ -1,3 +1,4 @@
+/* styles.css */
 body {
   margin: 0;
   padding: 0;
@@ -25,4 +26,21 @@ body {
 
 #author {
   font-size: 18px;
+}
+
+#bottle-container {
+  cursor: pointer;
+}
+
+#bottle {
+  width: 300px;
+  transition: transform 0.5s ease-in-out;
+}
+
+#bottle:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
 }
