@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())
     .then(data => {
       // Get the current day (0-6, where 0 is Sunday)
-      const today = new Date().getMinutes();
+      const today = new Date().getDate();
       console.log(today);
 
       // Display the quote of the day
