@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const today = new Date().getDate();
       const quoteElement = document.getElementById('quote');
-      const authorElement = document.getElementById('author');
       const imageElement = document.getElementById('jar');
       const jarType = Math.floor(today/9);
       console.log(jarType);
+      
       // Update the image source
       if( jarType == 0 ) {
         imageElement.src = 'jar1.jpg';
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const quoteOfTheDay = data[today % data.length];
       quoteElement.textContent = `"${quoteOfTheDay.quote}"`;
-      authorElement.textContent = `- ${quoteOfTheDay.author}`;
 
       // Attach click event to the bottle to toggle views
       jarContainer.addEventListener('click', toggleView);
