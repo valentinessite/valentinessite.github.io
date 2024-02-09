@@ -1,6 +1,6 @@
 // script.js
 document.addEventListener("DOMContentLoaded", function() {
-  const bottleContainer = document.getElementById('bottle-container');
+  const jarContainer = document.getElementById('jar-container');
   const quoteContainer = document.getElementById('quote-container');
 
   // Function to toggle between bottle and quote view
@@ -17,24 +17,26 @@ document.addEventListener("DOMContentLoaded", function() {
       const today = new Date().getDate();
       const quoteElement = document.getElementById('quote');
       const authorElement = document.getElementById('author');
-      const imageElement = document.getElementById('bottle');
-      const jarType = Math.floor(today/11);
+      const imageElement = document.getElementById('jar');
+      const jarType = Math.floor(today/9);
       console.log(jarType);
       // Update the image source
       if( jarType == 0 ) {
         imageElement.src = 'jar1.jpg';
       } else if( jarType == 1 ) {
         imageElement.src = 'jar2.jpg';
-      } else {
+      } else if ( jarType == 2 ){
         imageElement.src = 'jar3.jpg';
-      } 
+      } else {
+        imageElement.src = 'jar4.jpg';
+      }
 
       const quoteOfTheDay = data[today % data.length];
       quoteElement.textContent = `"${quoteOfTheDay.quote}"`;
       authorElement.textContent = `- ${quoteOfTheDay.author}`;
 
       // Attach click event to the bottle to toggle views
-      bottleContainer.addEventListener('click', toggleView);
+      jarContainer.addEventListener('click', toggleView);
     })
     .catch(error => console.error('Error fetching quotes:', error));
 });
