@@ -10,6 +10,11 @@ body {
   color: #fff;
   font-family: 'Arial', sans-serif;
 }
+div {
+   background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png");
+   height: 400px;
+   width: 100%;
+}
 
 #quote-container {
   text-align: center;
