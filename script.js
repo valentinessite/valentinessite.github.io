@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to toggle between bottle and quote view
   function toggleView() {
-    bottleContainer.classList.add('hidden');
+    jarContainer.classList.add('hidden');
     quoteContainer.classList.remove('hidden');
   }
 
