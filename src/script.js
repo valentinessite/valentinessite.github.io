@@ -13,11 +13,32 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("../data/quotes.json")
         .then((response) => response.json())
         .then((data) => {
-            const today = new Date().getDate();
+            //Fetch elements from documents
             const quoteElement = document.getElementById("quote");
             const imageElement = document.getElementById("jar");
-            const jarType = Math.floor(today / 9);
-            console.log(jarType);
+
+            //Get the current date
+            const day = new Date().getDate();
+            let month = new Date().getMonth();
+            const year = new Date().getFullYear();
+
+            if (day < 14) {
+                if (month == 0) {
+                    month = 11;
+                    year = year - 1;
+                } else {
+                    month = month - 1; // If it is not the yet the 14th, prevent the month from advancing
+                }
+            }
+
+            //Calculate the number of days since the last 14th
+            const valDate = new Date(year, month, 14).getTime();
+            const currDate = new Date().getTime();
+            const daysSinceValDay = Math.round(
+                (currDate - valDate) / (1000 * 3600 * 24)
+            );
+
+            const jarType = Math.floor(daysSinceValDay / 9);
 
             // Update the image source
             if (jarType == 0) {
@@ -30,8 +51,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 imageElement.src = "../res/jar4.PNG";
             }
 
-            const quote = data[today % data.length];
-            quoteElement.textContent = `"${quote.quote}"`;
+            const paperType = Math.floor(Math.random() * 4);
+
+            // Update the image source
+            if (paperType == 0) {
+                quoteContainer.style.backgroundImage = "url(../res/blue.jpg)";
+            } else if (paperType == 1) {
+                quoteContainer.style.backgroundImage = "url(../res/orange.jpg)";
+            } else if (paperType == 2) {
+                quoteContainer.style.backgroundImage = "url(../res/red.jpg)";
+            } else {
+                quoteContainer.style.backgroundImage = "url(../res/green.jpg)";
+            }
+
+            console.log(paperType);
+
+            //Use json data to populate page
+            const dayData = data[day % data.length];
+            quoteElement.textContent = `${dayData.quote}`;
 
             // Attach click event to the bottle to toggle views
             jarContainer.addEventListener("click", toggleView);
