@@ -16,7 +16,7 @@ body {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-  background-image: URL("./text.jpg");
+  background-image: url("text.jpg");
 }
 
 #quote {
