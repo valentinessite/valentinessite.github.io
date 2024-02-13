@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Fetch quotes from the JSON file
-    fetch("quotes.json")
+    fetch("../data/quotes.json")
         .then((response) => response.json())
         .then((data) => {
             const today = new Date().getDate();
