@@ -7,10 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    /*background: url("../res/blue.jpg");*/
     background-color: lightskyblue;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: #fff;
     font-family: "Schoolbell", arial, serif;
 }

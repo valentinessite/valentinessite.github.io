@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //Get the current date
             const day = new Date().getDate();
             let month = new Date().getMonth();
-            const year = new Date().getFullYear();
+            let year = new Date().getFullYear();
 
             if (day < 14) {
                 if (month == 0) {
@@ -41,27 +41,53 @@ document.addEventListener("DOMContentLoaded", function () {
             const jarType = Math.floor(daysSinceValDay / 9);
 
             // Update the image source
-            if (jarType == 0) {
-                imageElement.src = "../res/jar1.PNG";
-            } else if (jarType == 1) {
-                imageElement.src = "../res/jar2.PNG";
-            } else if (jarType == 2) {
-                imageElement.src = "../res/jar3.PNG";
-            } else {
-                imageElement.src = "../res/jar4.PNG";
+            switch(jarType) {
+                case 0:
+                    imageElement.src = "../res/jar1.PNG";
+                    break;
+                case 1:
+                    imageElement.src = "../res/jar2.PNG";
+                    break;
+                case 2:
+                    imageElement.src = "../res/jar3.PNG";
+                    break;
+                default:
+                    imageElement.src = "../res/jar4.PNG";
             }
 
-            const paperType = Math.floor(Math.random() * 4);
+            let numColors = 4;
+            if(day < 14) {
+                numColors = 8;
+            } else if(day > 26) {
+                numColors = 6;
+            }
+            const paperType = Math.floor(Math.random() * numColors);
 
             // Update the image source
-            if (paperType == 0) {
-                quoteContainer.style.backgroundImage = "url(../res/blue.jpg)";
-            } else if (paperType == 1) {
-                quoteContainer.style.backgroundImage = "url(../res/orange.jpg)";
-            } else if (paperType == 2) {
-                quoteContainer.style.backgroundImage = "url(../res/red.jpg)";
-            } else {
-                quoteContainer.style.backgroundImage = "url(../res/green.jpg)";
+            switch(paperType) {
+                case 0:
+                    quoteContainer.style.backgroundImage = "url(../res/blue.jpg)";
+                    break;
+                case 1:
+                    quoteContainer.style.backgroundImage = "url(../res/orange.jpg)";
+                    break;
+                case 2:
+                    quoteContainer.style.backgroundImage = "url(../res/red.jpg)";
+                    break;
+                case 3:
+                    quoteContainer.style.backgroundImage = "url(../res/pink.jpg)";
+                    break;
+                case 4:
+                    quoteContainer.style.backgroundImage = "url(../res/green.jpg)";
+                    break;
+                case 5:
+                    quoteContainer.style.backgroundImage = "url(../res/purple.jpg)";
+                    break;
+                case 6:
+                    quoteContainer.style.backgroundImage = "url(../res/cork.jpg)";
+                    break;
+                default:
+                    quoteContainer.style.backgroundImage = "url(../res/chalk.jpg)";
             }
 
             console.log(paperType);
