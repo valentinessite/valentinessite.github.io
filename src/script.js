@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to toggle between bottle and quote view
     function toggleView() {
-        imageElement.style.transform = "scale(0.9)";
-        setTimeout(() => {
-            jarContainer.classList.add("hidden");
-            quoteContainer.classList.remove("hidden");
-        }, 500);
+        //imageElement.style.transform = "scale(0.9)";
+        //setTimeout(() => {
+        jarContainer.classList.add("hidden");
+        quoteContainer.classList.remove("hidden");
+        //}, 500);
     }
 
     // Fetch quotes from the JSON file
