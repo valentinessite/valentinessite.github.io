@@ -24,7 +24,7 @@ body {
     border-radius: 10px;
     background-image: url("../res/blue.jpg");
     background-size: cover;
-    max-width: 90svw;
+    max-width: 75svw;
     max-height: 90svh;
     overflow-y: auto;
 }
