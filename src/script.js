@@ -2,11 +2,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const jarContainer = document.getElementById("jar-container");
     const quoteContainer = document.getElementById("quote-container");
+    const imageElement = document.getElementById("jar");
 
     // Function to toggle between bottle and quote view
     function toggleView() {
-        jarContainer.classList.add("hidden");
-        quoteContainer.classList.remove("hidden");
+        imageElement.style.transform = "scale(0.9)";
+        setTimeout(() => {
+            jarContainer.classList.add("hidden");
+            quoteContainer.classList.remove("hidden");
+        }, 500);
     }
 
     // Fetch quotes from the JSON file
@@ -15,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((data) => {
             //Fetch elements from documents
             const quoteElement = document.getElementById("quote");
-            const imageElement = document.getElementById("jar");
 
             //Get the current date
             const day = new Date().getDate();
