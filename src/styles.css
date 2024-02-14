@@ -1,12 +1,18 @@
 /* styles.css */
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     background-color: lightskyblue;
     color: #fff;
     font-family: "Schoolbell", arial, serif;
@@ -18,7 +24,9 @@ body {
     border-radius: 10px;
     background-image: url("../res/blue.jpg");
     background-size: cover;
-    max-width: 900px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
 }
 
 #quote {
